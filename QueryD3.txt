@@ -1,0 +1,51 @@
+1)
+SELECT count(*)as TotOrdini
+  FROM [northwind].[dbo].[Orders]
+2)
+SELECT count (*) as TotClienti
+  FROM [northwind].[dbo].[Customers]
+3)
+SELECT count (*) as TotClienti
+  FROM [northwind].[dbo].[Customers]
+  where City='London'
+4)
+SELECT avg (Freight) as MediaFreight
+  FROM [northwind].[dbo].[Orders]
+5)
+SELECT avg(Freight)as MediaFBOTTM
+  FROM [northwind].[dbo].[Orders]
+  where CustomerID='BOTTM'
+6)
+SELECT CustomerID, sum(Freight) as TotTrasp 
+  FROM [northwind].[dbo].[Orders]
+  group by CustomerID
+7)
+SELECT City, count(*)
+  FROM [northwind].[dbo].[Customers]
+  group by City
+8)
+SELECT OrderID, sum(Quantity*UnitPrice) as TotOrder
+  FROM [northwind].[dbo].[Order Details]
+  Group by OrderID
+9)
+SELECT OrderID, sum(UnitPrice*Quantity) as TotOrder
+  FROM [northwind].[dbo].[Order Details]
+  Group by OrderID
+  having OrderID='10248'
+10)
+SELECT CategoryID, Count(*) TotProdCens
+  FROM [northwind].[dbo].[Products]
+  Group by CategoryID
+11)
+LECT ShipCountry, Count(*) as TotOrderCountry
+  FROM [northwind].[dbo].[Orders]
+  Group by ShipCountry
+12)
+SELECT ShipCountry, avg(Freight) as AvgOrderCountry
+  FROM [northwind].[dbo].[Orders]
+  Group by ShipCountry
+
+
+
+
+
